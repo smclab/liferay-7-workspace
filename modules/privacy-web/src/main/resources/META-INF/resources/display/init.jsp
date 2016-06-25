@@ -10,8 +10,7 @@
 <%
 JournalArticle privacyPolicy = PrivacyUtil.getPrivacyJournalArticle(scopeGroupId, privacyPolicyArticleId);
 
-boolean showPrivacyInfoMessage = PrivacyUtil.showPrivacyInfoMessage(
-	themeDisplay.isSignedIn(), privacyEnabled, privacyPolicy, request, nameExtend);
+boolean showPrivacyInfoMessage = PrivacyUtil.showPrivacyInfoMessage(themeDisplay.isSignedIn(), privacyEnabled, privacyPolicy, request, nameExtend);
 %>
 
 
