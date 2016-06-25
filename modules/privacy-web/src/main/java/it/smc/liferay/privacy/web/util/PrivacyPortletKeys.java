@@ -5,4 +5,7 @@ public class PrivacyPortletKeys {
 	public static final String PRIVACY_ADMIN =
 		"it_smc_liferay_privacy_web_portlet_PrivacyAdminPortlet";
 
+	public static final String PRIVACY =
+		"it_smc_liferay_privacy_web_portlet_PrivacyPortlet";
+
 }

@@ -6,6 +6,8 @@ import org.osgi.service.component.annotations.Component;
 
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
 
+import it.smc.liferay.privacy.web.util.PrivacyPortletKeys;
+
 @Component(
 	immediate = true,
 	property = {
@@ -19,9 +21,10 @@ import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
 		"com.liferay.portlet.private-request-attributes=false",
 		"com.liferay.portlet.private-session-attributes=false",
 		"com.liferay.portlet.use-default-template=false",
-		"javax.portlet.display-name=EU Privacy Portlet",
+		"javax.portlet.display-name=EU Privacy Disclaimer",
 		"javax.portlet.init-param.template-path=/",
 		"javax.portlet.init-param.view-template=/display/view.jsp",
+		"javax.portlet.name=" + PrivacyPortletKeys.PRIVACY,
 		"javax.portlet.resource-bundle=content.Language",
 		"javax.portlet.security-role-ref=power-user,user"
 	},
