@@ -3,9 +3,6 @@
  * Copyright (c) SMC Treviso Srl. All rights reserved.
  */
 --%>
-<%@page import="java.util.HashMap"%>
-<%@page import="java.util.Map"%>
-<%@page import="com.liferay.portal.kernel.portlet.LiferayWindowState"%>
 <%@ include file="/display/init.jsp" %>
 
 <c:if test="<%= showPrivacyInfoMessage %>">
