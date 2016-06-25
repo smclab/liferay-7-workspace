@@ -1,43 +1,17 @@
 
 .smc-privacy-portlet {
-
-	color: red;
-
 	.privacy-info-message {
 		position: fixed;
 		bottom: 0px;
-		left: 0px;
 		right: 0px;
-		margin: 0px;
-		width: 100%;
-		z-index: 3;
+		left: 0px;
+		margin: 1em;
+		max-height: 90%;
+		max-height: calc(100vh - 2em);
+		overflow-y: auto;
+	}
 
-		background-color: #5fba98;
-		font-size: 12px;
-		font-weight: normal;
-		line-height: 2;
-		margin: 0 auto;
-		text-align: center;
-		color: #FFF;
-		height: auto;
-		padding-top: 8px;
-		padding-bottom: 8px;
-
-		a {
-			text-decoration: underline;
-			color: #FFF;
-		}
-
-		a.hide-strip-privacy-info-message {
-			text-decoration: underline;
-		}
-
-		a.open-dialog-privacy-policy {
-			text-decoration: underline;
-		}
-
-		.privacy-info-message-journal-article {
-			display: inline-block;
-		}
+	.privacy-policy-container {
+		margin: 1em;
 	}
 }

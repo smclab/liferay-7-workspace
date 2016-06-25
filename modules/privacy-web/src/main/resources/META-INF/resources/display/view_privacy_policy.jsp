@@ -5,12 +5,12 @@
 --%>
 <%@ include file="/display/init.jsp" %>
 
-<div id="<portlet:namespace />privacy-policy">
+<div class="privacy-policy-container" id="<portlet:namespace />privacy-policy">
 	<c:if test="<%= privacyPolicy != null %>">
 		<liferay-ui:asset-display
 			className="<%= JournalArticle.class.getName() %>"
 			classPK="<%= privacyPolicy.getResourcePrimKey() %>"
-			showHeader="false"
+			showHeader="<%= !themeDisplay.isStatePopUp() %>"
 		/>
 	</c:if>
 </div>
