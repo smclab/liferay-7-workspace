@@ -12,15 +12,19 @@
 <%@ taglib uri="http://liferay.com/tld/theme" prefix="liferay-theme" %>
 <%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
 
-<%@ page import="com.liferay.portal.kernel.util.GetterUtil"%>
-<%@ page import="com.liferay.portal.kernel.util.StringPool"%>
-<%@ page import="com.liferay.portal.kernel.util.ParamUtil"%>
-<%@ page import="com.liferay.portal.kernel.util.Validator"%>
-<%@ page import="com.liferay.portal.kernel.portlet.LiferayWindowState"%>
+<%@ page import="com.liferay.portal.kernel.portlet.LiferayWindowState" %>
+<%@ page import="com.liferay.portal.kernel.util.ArrayUtil" %>
+<%@ page import="com.liferay.portal.kernel.util.GetterUtil" %>
+<%@ page import="com.liferay.portal.kernel.util.ParamUtil" %>
+<%@ page import="com.liferay.portal.kernel.util.PropsKeys" %>
+<%@ page import="com.liferay.portal.kernel.util.PropsUtil" %>
+<%@ page import="com.liferay.portal.kernel.util.StringPool" %>
+<%@ page import="com.liferay.portal.kernel.util.Validator" %>
 
-<%@ page import="javax.portlet.PortletPreferences"%>
+<%@ page import="javax.portlet.PortletPreferences" %>
 
-<%@ page import="it.smc.liferay.privacy.web.util.PrivacyUtil"%>
+<%@ page import="it.smc.liferay.privacy.web.util.PrivacyPortletKeys" %>
+<%@ page import="it.smc.liferay.privacy.web.util.PrivacyUtil" %>
 
 <liferay-theme:defineObjects />
 

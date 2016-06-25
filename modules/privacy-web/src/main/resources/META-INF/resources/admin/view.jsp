@@ -7,30 +7,47 @@
 
 <%
 String redirect = ParamUtil.getString(request, "redirect");
+
+String[] staticPortlets = PropsUtil.getArray(PropsKeys.LAYOUT_STATIC_PORTLETS_ALL);
 %>
 
-<aui:nav-bar cssClass="" markupView="lexicon">
-	<aui:nav cssClass="navbar-nav">
-		<aui:nav-item label="privacy-settings" selected="<%= true %>" />
-	</aui:nav>
-</aui:nav-bar>
+<div class="container-fluid-1280" id="<portlet:namespace />settingsPanelId">
 
-<div class="closed container-fluid-1280 sidenav-container sidenav-right" id="<portlet:namespace />settingsPanelId">
-	<div class="sidenav-content">
-		<liferay-portlet:actionURL name="saveSettings" var="saveSettingsURL">
-			<liferay-portlet:param name="mvcPath" value="/admin/view.jsp" />
-		</liferay-portlet:actionURL>
+	<liferay-portlet:actionURL name="saveSettings" var="saveSettingsURL">
+		<liferay-portlet:param name="mvcPath" value="/admin/view.jsp" />
+	</liferay-portlet:actionURL>
 
-		<aui:form action="<%= saveSettingsURL %>" method="post" name="fm" onSubmit='<%= "event.preventDefault(); " + renderResponse.getNamespace() + "savePolicySettings();" %>'>
-			<aui:input name="redirect" type="hidden" value="<%= redirect %>" />
+	<aui:form action="<%= saveSettingsURL %>" method="post" name="fm" onSubmit='<%= "event.preventDefault(); " + renderResponse.getNamespace() + "savePolicySettings();" %>'>
+		<aui:input name="redirect" type="hidden" value="<%= redirect %>" />
 
+		<aui:fieldset-group markupView="lexicon">
 			<aui:fieldset>
 
-				<aui:input name="privacyEnabled" label="privacy-enabled" type="checkbox"
-						checked="<%= privacyEnabled %>"
-						onchange='<%= renderResponse.getNamespace() + \"checkStatus()\" %>' />
+				<aui:input
+					name="privacyEnabled"
+					label="privacy-enabled"
+					type="checkbox"
+					checked="<%= privacyEnabled %>"
+					onchange='<%= renderResponse.getNamespace() + "checkStatus()" %>'
+				/>
 
-				<div id="idsPanel" style="display:none">
+				<c:if test="<%= !ArrayUtil.contains(staticPortlets, PrivacyPortletKeys.PRIVACY) %>">
+					<div class="alert alert-warning">
+						<p>
+							<strong><liferay-ui:message key="warning" />!</strong>
+							<liferay-ui:message key="looks-like-you-didnt-configure-this-portal-to-include-the-privacy-disclaimer-as-a-static-portlet" />
+						</p>
+						<p>
+							<liferay-ui:message key="make-sure-your-portal-properties-have-something-similar-to-this" />
+						</p>
+						<pre style="margin: 5px 0px 0px"><code><%= PropsKeys.LAYOUT_STATIC_PORTLETS_ALL %>=<%= PrivacyPortletKeys.PRIVACY %></code></pre>
+					</div>
+				</c:if>
+
+			</aui:fieldset>
+
+			<div id="<portlet:namespace />settingsPanel" class="<%= privacyEnabled ? StringPool.BLANK : "hide" %>">
+				<aui:fieldset collapsible="<%= true %>" label="disclaimer-configuration">
 
 					<aui:input name="privacyPolicyArticleId" label="privacy-policy-web-content-id" value="<%= privacyPolicyArticleId %>" />
 
@@ -40,58 +57,40 @@ String redirect = ParamUtil.getString(request, "redirect");
 
 					<aui:input name="resetPreviousCookies" label="reset-previous-cookies" type="checkbox" checked="false" />
 
-				</div>
+				</aui:fieldset>
+			</div>
 
-			</aui:fieldset>
+		</aui:fieldset-group>
 
-			<aui:button-row>
-				<aui:button type="submit" />
-			</aui:button-row>
+		<aui:button-row>
+			<aui:button type="submit" />
+		</aui:button-row>
 
-		</aui:form>
-	</div>
+	</aui:form>
 </div>
+
 <aui:script>
+
 	function <portlet:namespace />savePolicySettings() {
 		submitForm(document.<portlet:namespace />fm);
 	}
-</aui:script>
 
-<aui:script>
 	Liferay.provide(
 		window,
 		'<portlet:namespace />checkStatus',
 		function() {
 			var A = AUI();
+
 			var checkbox = A.one('#<portlet:namespace />privacyEnabled');
-			if (checkbox) {
-				var status=checkbox.attr('checked');
-				//alert("status: "+status);
-				privacyEnabled=status;
-				if (status) {
-					//alert ("Show");
-					A.one('#idsPanel').show(true);
-				} else {
-					//alert ("Hide");
-					A.one('#idsPanel').hide(true);
-				}
+			var settingsPanel = A.one('#<portlet:namespace />settingsPanel');
+
+			if (checkbox && settingsPanel) {
+				settingsPanel.toggle(checkbox.attr('checked'))
 			}
 		},
 		['aui-base']
 	);
-</aui:script >
 
-<!-- toggle panel on page load ad reload -->
-<aui:script use="aui-base">
-	var A = AUI();
-	var checkbox = A.one('#<portlet:namespace />privacyEnabled');
-	if (checkbox) {
-		var status=checkbox.attr('checked');
-		privacyEnabled=status;
-		if (status) {
-			A.one('#idsPanel').show(true);
-		} else {
-			A.one('#idsPanel').hide(true);
-		}
-	}
-</aui:script>
+	<portlet:namespace />checkStatus();
+
+</aui:script >
