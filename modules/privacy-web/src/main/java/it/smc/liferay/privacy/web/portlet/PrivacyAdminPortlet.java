@@ -45,8 +45,8 @@ public class PrivacyAdminPortlet extends MVCPortlet {
 			ActionRequest actionRequest, ActionResponse actionResponse)
 		throws IOException, PortletException {
 
-		ThemeDisplay themeDisplay =
-			(ThemeDisplay)actionRequest.getAttribute(WebKeys.THEME_DISPLAY);
+		ThemeDisplay themeDisplay = (ThemeDisplay)actionRequest.getAttribute(
+			WebKeys.THEME_DISPLAY);
 
 		long companyId = themeDisplay.getCompanyId();
 		long groupId = themeDisplay.getScopeGroupId();
@@ -96,6 +96,7 @@ public class PrivacyAdminPortlet extends MVCPortlet {
 		_log.info("saveSettings");
 	}
 
-	private static final Log _log = LogFactoryUtil.getLog(PrivacyAdminPortlet.class);
+	private static final Log _log = LogFactoryUtil.getLog(
+		PrivacyAdminPortlet.class);
 
 }
