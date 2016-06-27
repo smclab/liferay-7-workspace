@@ -1,0 +1,11 @@
+Bundle-Name: Liferay Frontend JS SPA Transitions Web
+Bundle-SymbolicName: it.smc.liferay.frontend.js.spa.transitions.web
+Bundle-Version: 1.0.10
+Import-Package: *
+Private-Package:
+Web-ContextPath: /frontend-js-spa-transitions-web-${Bundle-Version}
+Liferay-Export-JS-Submodules: *
+Provide-Capability: \
+  osgi.webresource;osgi.webresource=frontend-js-spa-transitions-web;version:Version="${Bundle-Version}",\
+  osgi.extender;osgi.extender="liferay.spa.transitions";version:Version="${Bundle-Version}"
+--includeresource: package.json
