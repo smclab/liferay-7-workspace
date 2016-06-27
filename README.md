@@ -13,6 +13,26 @@ installed on Liferay Portal via [Liferay Marketplace](http://liferay.com/marketp
 In this repository plugins are laid out in a workspace configured to build OSGi bundles.
 This workspace can be easily connected to Liferay IDE 3.0.0
 
+## Projects
+
+### EU Cookie Agreement
+
+##### [Source][eu-privacy-src] — [Marketplace][eu-privacy-mp]
+
+[eu-privacy-src]: https://github.com/smclab/liferay-7-workspace/tree/master/modules/privacy-web
+[eu-privacy-mp]: https://web.liferay.com/marketplace/-/mp/application/59398935
+
+A small and configurable, Cookie Agreement Disclaimer to make Liferay Portals
+that are compliant with the European Union laws regarding Privacy Concerns.
+
+### SPA Transitions
+
+##### [Source][spa-transitions-src] — *(Not yet on the marketplace)*
+
+[spa-transitions-src]: https://github.com/smclab/liferay-7-workspace/tree/master/modules/frontend-js-spa-transitions-web
+
+Automagic animated transitions for your views, without writing a single line of
+code. Just define what becomes what and you’re good to go.
 
 ## Contributing
 
