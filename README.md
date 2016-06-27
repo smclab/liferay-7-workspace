@@ -3,15 +3,15 @@ Liferay Workspace Project hosting modules developed by SMC for Liferay 7
 
 # SMC Liferay 7 Workspace
 
-This repository contains plugins developed by SMC to be used on [Liferay 
-Portal](http://www.liferay.com/community/liferay-projects/liferay-portal) 
-and [Liferay Digital eXperience Platform](https://www.liferay.com/digital-experience-platform).
+This repository contains plugins developed by SMC to be used on [Liferay
+Portal](http://www.liferay.com/community/liferay-projects/liferay-portal)
+and [Liferay Digital Experience Platform](https://www.liferay.com/digital-experience-platform).
 
 Most of the plugins found in this repository can be easily
 installed on Liferay Portal via [Liferay Marketplace](http://liferay.com/marketplace).
 
 In this repository plugins are laid out in a workspace configured to build OSGi bundles.
-This workspace can easily connected to Liferay IDE 3.0.0
+This workspace can be easily connected to Liferay IDE 3.0.0
 
 
 ## Contributing
@@ -41,5 +41,3 @@ You should have received a copy of the [GNU Lesser General Public
 License](http://www.gnu.org/licenses/lgpl-2.1.html) along with this library; if
 not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth
 Floor, Boston, MA 02110-1301 USA
-
-
