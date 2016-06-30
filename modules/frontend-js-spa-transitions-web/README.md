@@ -1,5 +1,7 @@
 #### liferay-7-workspace
 
+<img align="right" width="90" height="90" src="https://raw.githubusercontent.com/smclab/liferay-7-workspace/master/modules/frontend-js-spa-transitions-web/logo.png">
+
 # SPA Transitions
 
 Automagic animated transitions for your views, without writing a single line of code. Just define what becomes what and you’re good to go.
