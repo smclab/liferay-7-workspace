@@ -27,9 +27,10 @@ that are compliant with the European Union laws regarding Privacy Concerns.
 
 ### SPA Transitions
 
-##### [Source][spa-transitions-src] — [Docs][spa-transitions-src] — *(Not yet on the marketplace)*
+##### [Source][spa-transitions-src] — [Docs][spa-transitions-src] — [Marketplace][spa-transitions-mp]
 
 [spa-transitions-src]: https://github.com/smclab/liferay-7-workspace/tree/master/modules/frontend-js-spa-transitions-web
+[spa-transitions-mp]: https://web.liferay.com/marketplace/-/mp/application/76061240
 
 Automagic animated transitions for your views, without writing a single line of
 code. Just define what becomes what and you’re good to go.
