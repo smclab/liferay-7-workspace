@@ -17,6 +17,8 @@ This workspace can be easily connected to Liferay IDE 3.0.0
 
 ### EU Cookie Agreement
 
+<img align="right" width="90" height="90" src="https://raw.githubusercontent.com/smclab/liferay-7-workspace/master/modules/privacy-web/logo_mp.png">
+
 ##### [Source][eu-privacy-src] — [Marketplace][eu-privacy-mp]
 
 [eu-privacy-src]: https://github.com/smclab/liferay-7-workspace/tree/master/modules/privacy-web
@@ -26,6 +28,8 @@ A small and configurable, Cookie Agreement Disclaimer to make Liferay Portals
 that are compliant with the European Union laws regarding Privacy Concerns.
 
 ### SPA Transitions
+
+<img align="right" width="90" height="90" src="https://raw.githubusercontent.com/smclab/liferay-7-workspace/master/modules/frontend-js-spa-transitions-web/logo.png">
 
 ##### [Source][spa-transitions-src] — [Docs][spa-transitions-src] — [Marketplace][spa-transitions-mp]
 
