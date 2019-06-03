@@ -201,14 +201,14 @@ def distDependencySpec(boolean allowExternal, boolean allowProject) {
 
 String distLocalMode = project.properties["distLocalMode"]
 
-if (distLocalMode == null) {
-	distLocalMode = "true"
+if (distLocalMode == null && project.properties['nexus.release.mode'] == "true") {
+    distLocalMode = "false"
 }
-if (project.properties['nexus.release.mode'] == "true") {
-	distLocalMode = "false"
+else if (distLocalMode == null && project.properties['gitSnapshotsBranch'] == false) {
+    distLocalMode = "false"
 }
-if (project.properties['gitSnapshotsBranch'] == false) {
-	distLocalMode = "false"
+else if (distLocalMode == null) {
+    distLocalMode = "true"
 }
 
 println "** distLocalMode = ${distLocalMode}"
